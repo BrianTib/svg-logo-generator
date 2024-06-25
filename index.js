@@ -1,3 +1,4 @@
+import { Cirle, Square, Triangle } from "./lib/shapes.js";
 import inquirer from 'inquirer';
 import colors from 'colors';
 
@@ -15,6 +16,19 @@ const customColors = {
     'black': 'black'.black,
     'white': 'white'.white,
 };
+
+const testExample = {
+    logo: 'RGB',
+    customTextColor: false,
+    textColorKeyword: 'green',
+    shape: 'square',
+    customShapeColor: true,
+    shapeColorHex: '#f3f'
+}
+
+function createShapeSVG(text, shape, textColor, shapeColor) {
+    
+}
 
 function init() {
     inquirer.prompt([
