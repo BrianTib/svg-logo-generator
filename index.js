@@ -1,6 +1,7 @@
 import { Circle, Square, Triangle } from "./lib/shapes.js";
-import inquirer from 'inquirer';
+import { writeFileSync } from 'fs';
 import colors from 'colors';
+import inquirer from 'inquirer';
 
 // This test checks if a given string is valid hexadecimal
 const hexRegex = /^#([0-9A-F]{3}){1,2}$/i;
@@ -18,6 +19,7 @@ const customColors = {
 };
 
 function createShapeSVG(text, shape, textColor, shapeColor) {
+    // A list of the available classes
     const shapeClasses = {
         circle: Circle,
         square: Square,
@@ -25,17 +27,24 @@ function createShapeSVG(text, shape, textColor, shapeColor) {
     };
     
     const ShapeClass = shapeClasses[shape];
+    // Check that the class chosen is valid
     if (!ShapeClass) {
         throw new Error("Unknown shape");
     }
     
+    // Create the renderer for the chosen class
+    // and pass the arguments to it
     const renderer = new ShapeClass(text, textColor, shapeColor);
+    // Render the SVG and return it as a string
     const svg = renderer.render();
+
+    // Write the new SVG to disk
+    //writeFileSync('logo.svg', svg);
     console.log(svg);
 }
 
 function test() {
-    createShapeSVG('RGB', 'circle', '#fff', 'gray');
+    createShapeSVG('RGB', 'triangle', '#fff', 'gray');
 }
 
 function init() {
