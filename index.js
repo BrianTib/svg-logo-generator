@@ -1,4 +1,4 @@
-import { Cirle, Square, Triangle } from "./lib/shapes.js";
+import { Circle, Square, Triangle } from "./lib/shapes.js";
 import inquirer from 'inquirer';
 import colors from 'colors';
 
@@ -17,17 +17,25 @@ const customColors = {
     'white': 'white'.white,
 };
 
-const testExample = {
-    logo: 'RGB',
-    customTextColor: false,
-    textColorKeyword: 'green',
-    shape: 'square',
-    customShapeColor: true,
-    shapeColorHex: '#f3f'
+function createShapeSVG(text, shape, textColor, shapeColor) {
+    const shapeClasses = {
+        circle: Circle,
+        square: Square,
+        triangle: Triangle
+    };
+    
+    const ShapeClass = shapeClasses[shape];
+    if (!ShapeClass) {
+        throw new Error("Unknown shape");
+    }
+    
+    const renderer = new ShapeClass(text, textColor, shapeColor);
+    const svg = renderer.render();
+    console.log(svg);
 }
 
-function createShapeSVG(text, shape, textColor, shapeColor) {
-
+function test() {
+    createShapeSVG('RGB', 'circle', '#fff', 'gray');
 }
 
 function init() {
@@ -112,4 +120,5 @@ function init() {
     })
 }
 
-init();
+test();
+//init();
