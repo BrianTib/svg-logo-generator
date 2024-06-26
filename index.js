@@ -27,7 +27,7 @@ const testExample = {
 }
 
 function createShapeSVG(text, shape, textColor, shapeColor) {
-    
+
 }
 
 function init() {
@@ -103,6 +103,7 @@ function init() {
             when: (answers) => !answers.customShapeColor
         }
     ]).then(answers => {
+        // Select the colors based on the user's choice
         const textColor = answers.customTextColor ? answers.textColorHex : answers.textColorKeyword;
         const shapeColor = answers.customShapeColor ? answers.shapeColorHex : answers.shapeColorKeyword;
       
