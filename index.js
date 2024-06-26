@@ -47,7 +47,7 @@ function init() {
     inquirer.prompt([
         {
             type: 'input',
-            name: 'logo',
+            name: 'text',
             message: 'Enter up to three characters for your logo:',
             validate: (input) => {
                 if (input.length < 1) {
