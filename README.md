@@ -37,5 +37,5 @@ npm run test
 For additional questions contact me through [GitHub](https://github.com/brianTib) or [via email](mailto:bptiburcio@gmail.com)
 
 ## Links
-[GitHub Repo](https://github.com/BrianTib/svg-logo-generator)
-[Video Demonstration](https://drive.google.com/file/d/17RkOmYuhs8krN0McyT8UD4AYwV4YCJ1K/view?usp=sharing)
+- [GitHub Repo](https://github.com/BrianTib/svg-logo-generator)
+- [Video Demonstration](https://drive.google.com/file/d/1OE4B7YGbb3_VFNVwYSYUCxGEbexNgYdI/view?usp=sharing)
