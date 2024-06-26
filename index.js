@@ -39,12 +39,8 @@ function createShapeSVG(text, shape, textColor, shapeColor) {
     const svg = renderer.render();
 
     // Write the new SVG to disk
-    //writeFileSync('logo.svg', svg);
-    console.log(svg);
-}
-
-function test() {
-    createShapeSVG('RGB', 'triangle', '#fff', 'gray');
+    writeFileSync('logo.svg', svg);
+    console.log("Generated logo.svg");
 }
 
 function init() {
@@ -129,5 +125,4 @@ function init() {
     })
 }
 
-test();
-//init();
+init();
